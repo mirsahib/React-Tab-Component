@@ -1,13 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function TabComponent({ components, links }) {
+function TabComponent({ links }) {
   return (
     <div className="App">
       <Router>
         <div>
           <nav>
             <ul>
+              {" "}
+              {/**populating the links */}
               {links.map((link) => {
                 return (
                   <li>
@@ -18,12 +20,13 @@ function TabComponent({ components, links }) {
             </ul>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+          {/* Populating the switch with routes */}
           <Switch>
-            {links.map((link) => {
-              return <Route path={link.path}>{link.component}</Route>;
-            })}
+            {links.length !== 0
+              ? links.map((link) => {
+                  return <Route path={link.path} component={link.component} />;
+                })
+              : ""}
           </Switch>
         </div>
       </Router>

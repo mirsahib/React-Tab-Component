@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <TabComponent
         links={[
-          { component: TabItem1, name: "TabItem1", path: "/tab1" },
+          { component: TabItem1, name: "TabItem1", path: "/" },
           { component: TabItem2, name: "TabItem2", path: "/tab2" },
           { component: TabItem3, name: "TabItem3", path: "/tab3" },
         ]}
