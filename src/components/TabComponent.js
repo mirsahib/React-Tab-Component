@@ -24,7 +24,9 @@ function TabComponent({ links }) {
           <Switch>
             {links.length !== 0
               ? links.map((link) => {
-                  return <Route path={link.path} component={link.component} />;
+                  return (
+                    <Route exact path={link.path} component={link.component} />
+                  );
                 })
               : ""}
           </Switch>
