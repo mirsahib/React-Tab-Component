@@ -12,8 +12,15 @@ function TabComponent({ links }) {
               {/**populating the links */}
               {links.map((link) => {
                 return (
-                  <li>
-                    <Link to={link.path}>{link.name}</Link>
+                  <li
+                    style={{
+                      display: "inline",
+                      paddingLeft: "10px",
+                    }}
+                  >
+                    <Link style={{ textDecoration: "none" }} to={link.path}>
+                      {link.name}
+                    </Link>
                   </li>
                 );
               })}
